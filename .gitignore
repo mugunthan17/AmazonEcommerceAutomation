@@ -1,0 +1,25 @@
+target/
+test-output/
+reports/
+logs/
+screenshots/
+*.log
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Driver binaries
+src/main/resources/drivers/*.exe
+
+# Keep driver folder note
+!src/main/resources/drivers/README.md
+
+# Temporary/work files
+work/
+outputs/
