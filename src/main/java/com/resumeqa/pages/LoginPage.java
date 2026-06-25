@@ -4,8 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class LoginPage extends BasePage {
-    private static final By EMAIL_INPUT = By.id("ap_email");
-    private static final By CONTINUE_BUTTON = By.id("continue");
+    private static final By EMAIL_INPUT = By.xpath("//input[@id='ap_email_login']");
+    private static final By CONTINUE_BUTTON = By.xpath("//input[@class='a-button-input']");
     private static final By PASSWORD_INPUT = By.id("ap_password");
     private static final By SIGN_IN_BUTTON = By.id("signInSubmit");
     private static final By EMAIL_MISSING_ALERT = By.cssSelector("#auth-email-missing-alert .a-alert-content");

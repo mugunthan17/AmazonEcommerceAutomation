@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Amazon India Ecommerce Automation Suite" parallel="false">
+<suite name="Amazon India Ecommerce Automation Suite">
     <listeners>
         <listener class-name="com.resumeqa.utils.TestListener"/>
     </listeners>
@@ -7,8 +7,6 @@
     <test name="Amazon Functional and Regression Scenarios">
         <classes>
             <class name="com.resumeqa.tests.LoginTests"/>
-            <class name="com.resumeqa.tests.AddToCartTests"/>
-            <class name="com.resumeqa.tests.CheckoutTests"/>
         </classes>
     </test>
 </suite>

@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public final class DriverFactory {
+
     private static final ThreadLocal<WebDriver> DRIVER = new ThreadLocal<>();
 
     private DriverFactory() {
@@ -28,10 +29,15 @@ public final class DriverFactory {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         options.addArguments("--disable-notifications");
-        options.addArguments("--start-maximized");
+        options.addArguments("--disable-blink-features=AutomationControlled");
+        options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation", "enable-logging"});
+        options.setExperimentalOption("useAutomationExtension", false);
+
         if (ConfigReader.getBoolean("headless")) {
             options.addArguments("--headless=new");
             options.addArguments("--window-size=1920,1080");
+        } else {
+            options.addArguments("--start-maximized");
         }
 
         WebDriver driver = new ChromeDriver(options);
